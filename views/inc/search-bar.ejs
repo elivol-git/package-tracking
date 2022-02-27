@@ -1,0 +1,38 @@
+<div class="search-bar" ng-controller="searchController">
+    <div class="search-bar-wrapper">
+        <form action="">
+            <div class="search-box"><button class="btn" ng-click=""><span class="glyphicon glyphicon-arrow-left"></span></button><input type="text" placeholder="חיפוש מספר התרה"></div>
+            <div class="search-box"><button class="btn" ng-click=""><span class="glyphicon glyphicon-arrow-left"></span></button><input type="text" placeholder="חיפוש מזהה עסקה"></div>
+            <div class="search-box"><button class="btn" ng-click="submitForm(query, $event)"><span class="glyphicon glyphicon-arrow-left"></span></button><input type="text" placeholder="מספר מכולה" ng-model="query" ng-enter="submitForm(this.query, $event)" required></div>
+        </form>
+
+        <div id="search-results">
+            <div class="search-result row" ng-show="searchResult">
+                <div class="col-md-2">
+                    <form action="" id="formSms" name="formSms" method="post" ng-submit="sendSms($event)">
+						<p>אני מעוניין לקבל מסרון לנייד כאשר המכולה מגיעה</p>
+                        <input type="text" ng-model="phoneNumber" ng-minlength="10" ng-maxlength="10" required placeholder="מספר נייד">
+                        <input type="submit" value="שלח">
+						<div id="sms-send-result"  ng-show="smsResult" class="alert alert-success">{{smsSentMsg}}</div>
+						<div id="sms-send-error" ng-show="smsResult==false" class="alert alert-danger">{{smsErrorMsg}}</div>
+                    </form>
+                </div>
+                <div class="col-md-5 search-details">
+                    <div><strong>סוג טיפול:</strong>{{treatment}}</div>
+                    <div><strong>מסוכן:</strong>{{dangerous}}</div>
+                    <div><strong>צפויה להגיע למוסף אשדוד/חיפה:</strong>{{dueDate * 1000 | date:'dd.MM.yyyy'}}</div>
+                    <div><strong>סטאטוס מכס:</strong>{{customsStatus}}</div>
+                </div>
+                <div class="col-md-5 search-details">
+                    <div class="blue"><strong>מכולה מספר:</strong>{{containerID}}</div>
+                    <div><strong>גודל:</strong>{{size}}</div>
+                    <div><strong>סוג:</strong>{{type}}</div>
+                    <div><strong>מצהר:</strong>{{manifest}}</div>
+                </div>
+            </div>
+			<div id="result-error" ng-show="searchResult==false" class="alert alert-danger">{{searchErrorMsg}}</div>
+        </div>
+		
+    </div>
+    <%- include('footer'); %>
+</div>

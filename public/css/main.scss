@@ -1,0 +1,225 @@
+$myFont: Assistant;
+$mainColor: #001348;
+$myFontSize: 16px;
+$myWidth: 680px;
+$menuItemPadding: 9px 16px;
+$menuItemColor: #FFF;
+$blueColor: #00D3FF;
+$yellowColor: #FEDF47;
+$searchBtnWidth: 75px;
+
+body {
+  font-family: $myFont;
+  font-size: $myFontSize;
+  color: $mainColor;
+  min-width: 320px;
+}
+.blue{
+color: $blueColor;
+}
+.top-container {
+  top: 0px;
+  left: 0px;
+  height: 463px;
+  background: transparent url('/img/Rectangle125.png') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  position: relative;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  height: 100%;
+  background: transparent url('/img/Mask-Group-1.png') 0% 0% no-repeat padding-box;
+  display: inline-block;
+}
+
+nav {
+  overflow: hidden;
+  margin-top: 214px;
+}
+
+nav a {
+  float: right;
+  padding: $menuItemPadding;
+  text-decoration: none;
+  text-align: center;
+  font: normal normal bold 24px/32px Assistant;
+  letter-spacing: 0px;
+  color: $menuItemColor;
+  text-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+
+nav a:hover {
+  border-bottom: 2px solid white;
+  color: $menuItemColor;
+}
+
+.menu {
+  width: 674px;
+  height: 52px;
+  margin: auto;
+  border-bottom: 1px solid #FFF;
+}
+
+.subnav {
+  float: right;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  padding: $menuItemPadding;
+  background-color: inherit;
+  margin: 0;
+  appearance: button;
+  text-decoration: none;
+  float: none;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  background: $mainColor 0% 0% no-repeat padding-box;
+  box-shadow: 0px 9px 13px #00000069;
+  opacity: 1;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: none;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  display: block;
+}
+
+.subnav-content a:hover {
+  background: $yellowColor 0% 0% no-repeat padding-box;
+  opacity: 1;
+  color: black;
+  border-bottom: none;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+/* Search bar */
+.search-bar {
+  text-align: center;
+  position: relative;
+  top: 160px;
+  width: 100%;
+}
+
+.search-box {
+  width: 290px;
+  height: 67px;
+  display: inline-block;
+  box-shadow: 2px 2px 13px #00000066;
+  margin-right: 20px;
+}
+.search-box {
+  input[type="text"] {
+    text-align: center;
+	float: left;
+	height: 100%;
+    border: none;
+    width: calc(100% - #{$searchBtnWidth});
+  }
+  button {
+    float: left;
+    width: $searchBtnWidth;
+    height: inherit;
+    background-color: $blueColor;
+  }
+}
+.search-box:last-child{
+  margin-right: 0;
+}
+.search-bar-wrapper {
+  width: fit-content;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+  position: relative;
+  margin: auto;
+}
+
+#search-results {
+
+}
+
+.search-result {
+  strong{
+    text-align: right;
+    font: normal normal bold 19px/22px Assistant;
+    letter-spacing: 0px;
+    color: $mainColor;
+    opacity: 1;
+	margin-left: 10px;
+  }
+  .ng-binding {
+    text-align: right;
+    direction: rtl;
+  }
+  .search-details div {
+	border-bottom: 1px solid $blueColor;
+	padding: 6px 0;
+    margin: 0 7px;
+	font: normal normal normal 17px/22px Assistant;
+  }
+}
+#formSms{
+	p {
+	  text-align: right;
+	  font: normal normal normal 17px/20px Assistant;
+	}
+	input {
+	  width: 150px;
+	  height: 37px;
+	  margin: 5px auto;
+	}
+	input[type="text"] {
+	  text-align: right;
+	}
+	input[type="submit"] {
+	  background: #FEDF47 0% 0% no-repeat padding-box;
+	  opacity: 1;
+	  font: normal normal bold 17px/22px Assistant;
+	}
+}
+
+footer {
+  text-align: center;
+  width: 821px;
+  margin: 20px auto;
+}
+footer{
+  h1 {
+    font: normal normal 800 55px/57px Assistant;
+    letter-spacing: 0.71px;
+    text-shadow: 0px 3px 6px #000000;
+  }
+  hr {
+    border-bottom: 2px solid $blueColor;
+    width: 93px;
+    margin: auto;
+  }
+  aside {
+    font: normal normal 600 16px/22px Assistant;
+    letter-spacing: 0px;
+    margin-top: 15px;
+  }
+}
+.arrow {
+  border: 4px solid $yellowColor;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 7px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
